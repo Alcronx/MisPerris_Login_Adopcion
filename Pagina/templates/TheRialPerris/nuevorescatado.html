@@ -1,0 +1,61 @@
+{% extends "TheRialPerris/Base.html" %}
+{% load staticfiles %}
+{% block title %}Nuevo Rescatado{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/formulario.css' %}">
+<link rel="stylesheet" href="{% static 'css/formularioInput.css' %}">
+<script src="{% static 'js/ValidandoResc.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="contenedor-formulario">
+    <div class="wrap">
+        <form action="" class="formulario post-form" name="formulario_registro" 
+        method="POST" enctype="multipart/form-data" onsubmit="return ValidarResc()">{%csrf_token%}
+            <div>
+
+                <div class="input-group">
+                    <input type="text" id="nombreR" name="nombreresc">
+                    <label for="nombreR">Nombre:</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="raza" name="razaresc">
+                    <label for="raza">Raza Predominante:</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" maxlength=100 id="descripcion" name="descripcionresc">
+                    <label for="descripcion">Descripcion::</label>
+                </div>
+                <div class="input-group ">
+                    <div class="mainselection">
+                        <select id="Estado" name="estadoresc">
+                            <option value="Rescatado">Rescatado</option>
+                            <option value="Disponible">Disponible</option>
+                            <option value="Adoptado">Adoptado</option>
+                        </select>
+                    </div>
+
+                    <label for="Estado">Estado Rescatado:</label>
+                </div>
+                <div class="input-group">
+                    <div class="div_file">
+                        <p class="texto" id="Cambiotexto">Imagen Rescatado</p>
+                        <input type="file" class="btn_enviar" id="ImagenR" name="imagenresc" aria-multiselectable="false">
+                    </div>
+                </div>
+
+                <input type="submit" class="btn-submit" value="Enviar">
+
+            </div>
+
+        </form>
+    </div>
+
+ 
+
+</div>
+
+<script src="{% static 'js/botonresc.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "TheRialPerris/Base.html" %}
+{% load staticfiles %}
+
+{% block title %}Mis Perris{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hover.css' %}">{% endblock %}
+
+
+{% block content %}
+<footer class="contenedor3">
+        <div class="contenedor3-1">
+                <h2>Rescate</h2>
+                <p>ETAPA UNO</p>
+                <h1>__________</h1>
+                <br>
+                <p>Rescatamos perros en situacion de peligro y/o abandono.</p>
+                <p>Los rehabilitamos y los preparamos para buscarles un hogar</p>
+                <br>
+                <br>
+                <img style="max-width: 100%; height: auto;" src="{% static 'Imagenes/rescate.jpg' %}" width="200"
+                        height="100">
+        </div>
+
+        <div class="contenedor3-2">
+                <img style="max-width: 100%; height: auto;" src="{% static 'Imagenes/crowfunding.jpg' %}" width="200"
+                        height="200">
+                <h1>Crowfunding</h1>
+                <p>Financiamiento</p>
+                <h1>_________</h1>
+                <br>
+                <p>Sigue nuestras redes sociales para indormarte acerca de las diversas campañas y</p>
+                <p>actividades que realizamos para obtener financiamiento para seguir ayudando.</p>
+        </div>
+</footer>
+
+<div class="hover">
+        {% if rescatados %}
+        {% for rescatado in rescatados %}
+        <div class="contenedorImg">
+                <section class="portafolio-item">
+                        <img src="{{rescatado.image.url}}" alt="" class="portafolio-img">
+                        <section class="portafolio-text">
+                                <h1>{{ rescatado.Nombreresc }}</h1>
+                                <p>{{ rescatado.Descripcion }}</p>
+                        </section>
+                </section>
+
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <div class="contenedorImg">
+           <h1>NO EXISTEN PERROS</h1>
+        </div>
+        {% endif %}
+        
+</div>
+
+
+</div>
+
+{% endblock %}

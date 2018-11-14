@@ -1,0 +1,204 @@
+*{margin:0; 
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.bigdaddy{
+    width: 100%;
+    background-color: rgb(130, 132, 134);
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Contenedor1{
+    background-color: rgb(125, 236, 125);
+    width: 100%;
+    
+    /*flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header nav{
+    width: 50%;
+    /*flex*/
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+header nav a{
+    
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    
+}
+
+.logo{
+    padding: 5px;
+}
+
+.Contenedor2{
+    width: 100%;
+    background-color: rgb(88, 231, 148);
+     /*flex*/
+     display: flex;
+     flex-direction: column;
+     
+}
+
+.Contenedor1 nav{
+    
+        font-family: cursive;
+    
+}
+
+.Perro{
+    padding: 10px;
+     /*flex*/
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+}
+
+
+.Rescate{
+    padding-top: 20px;
+    text-align: center;
+    font: oblique bold 120% cursive;
+    text-decoration: none;
+    color: #fff;
+    
+}
+.Contenedor2abajo{
+ width: 100%;
+    /*flex*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.numero{
+    font-family: fantasy;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.Paginas{
+    padding: 10px;
+    word-spacing: 5px;
+}
+
+.contenedor3{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*flex*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    font-family: cursive;
+}
+
+.contenedor3-1{
+    width: 45%;
+    /*flex*/
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.contenedor3-2{
+    width: 45%;
+    /*flex*/
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contenedor5{
+    width: 100%;
+    background-color: rgba(192, 196, 177, 0.856);
+    /*flex*/
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Fin{
+    padding: 5px;
+}
+p{
+    font-family: cursive;
+}
+/*Media---------------------------*/
+@media screen and (max-width: 550px) {
+	header nav{
+        width: 100%;
+        /*flex*/
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        
+    }
+
+    .logo{
+        justify-content: center;
+    }
+    
+    .Contenedor1{
+        flex-direction: column;
+    }
+
+    .contenedor3{
+        
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    
+    .contenedor3-1{
+        
+        width: 100%;
+        align-items: center;
+        padding-bottom: 20px;
+        
+    }
+    
+    .contenedor3-2{
+        width: 100%;
+        align-items: center;
+        
+        
+    }
+
+    .Contenedor2abajo{
+        width: 100%;
+           /*flex*/
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           
+       }
+
+}
+/*Media-------------------------*/
+

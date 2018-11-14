@@ -1,0 +1,95 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.flexslider{
+	width: 300px;
+	max-width: 1000px;
+	margin: 10px auto;
+
+	border: 5px solid #fff;
+	border-radius: 8px;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.70);
+
+	display: flex;
+	flex-direction: column;
+
+	position: relative;
+}
+
+ul{
+    list-style: none;
+}
+
+.slides,
+.slides li,
+.slides li img{
+	width: 100%;
+}
+
+.slides li{
+	margin-bottom: -5px;
+}
+
+
+.flex-control-nav.flex-control-paging{
+	width: 45%;
+	padding: 2px 0px;
+	background: rgba(255, 94, 0, 0.267);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 5px;
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.80);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+
+	list-style: none;
+
+	position: absolute;
+	bottom: 1px;
+	z-index: 3;
+}
+
+.flex-control-nav li{
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.flex-control-nav li a{
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: rgba(99, 245, 63, 0.534);
+	border-radius: 50%;
+	text-indent: -9999px;
+	box-shadow: inset 0px -3px 2px 0px rgba(0,0,0,0.55);
+}
+
+.flex-control-nav li a.flex-active{
+	background: #f025256e;
+}
+
+
+@media screen and (max-width: 311px) {
+	.flexslider{
+        width: 250px;
+        max-width: 1000px;
+        margin: 8px auto;
+    
+        border: 2px solid #fff;
+        border-radius: 6px;
+        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.70);
+    
+        display: flex;
+        flex-direction: column;
+    
+        position: relative;
+    }
+    
+}

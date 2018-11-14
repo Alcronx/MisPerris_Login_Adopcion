@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="icon" href="{% static 'Imagenes/El_bananero.ico' %}">
+
+
+    <script src="{% static 'js/Prefix.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/Validando.js' %}"></script>
+
+    {% block head %}{% endblock %}
+
+</head>
+<div class="BigDaddy">
+    <header class="Contenedor1">
+        <div class="logo">
+            <img src="{% static 'Imagenes/logo.png' %}" width="250" height="50" />
+        </div>
+        <nav>
+            <a href="{% url 'pagina_principal' %}">Inicio</a>
+            <a href="#">Quienes Somos</a>
+            <a href="#">Servicios</a>
+            <a href="{% url 'pagina_formulario' %}">Contactanos</a>
+            <a href="{% url 'nuevo_rescatado' %}">Nuevo Rescatado</a>
+            <div>
+                {% block Login %}
+                <a href="{% url 'social:begin' 'github' %}">Login GitHub</a>
+                {% endblock %}
+                {% block Nombre %}
+                <p>Hello {{ user.username }}!</p>
+                {% endblock %}
+            </div>
+        </nav>
+    </header>
+    <aside class="Contenedor2">
+        <div class="flexslider">
+            <ul class="slides">
+
+                <li>
+                    <img src="{% static 'Imagenes/rework1.jpg' %}" alt="">
+
+                </li>
+                <li>
+                    <img src="{% static 'Imagenes/rework2.jpg' %}" alt="">
+
+                </li>
+                <li>
+                    <img src="{% static 'Imagenes/rework3.jpg' %}" alt="">
+
+                </li>
+                <li>
+                    <img src="{% static 'Imagenes/rework4.jpg' %}" alt="">
+
+                </li>
+                <li>
+                    <img src="{% static 'Imagenes/rework5.jpg' %}" alt="">
+
+                </li>
+            </ul>
+        </div>
+        <div class="Perro">
+            <p class="Rescate">Rescate y Adopcion De Perros Callejeros</p>
+        </div>
+
+        <div class="Contenedor2abajo">
+            <div class="numero">
+                <p>+56 9 98765431</p>
+            </div>
+            <nav class="Paginas">
+                <a href="https://www.facebook.com/" target="_black"><img src="{% static 'Imagenes/IconoFacebook.png' %}"
+                        width="30" height="30"></a>
+                <a href="https://www.google.com/maps/" target="_black"> <img src="{% static 'Imagenes/IconoGoogleMas.png' %}"
+                        width="30" height="30"></a>
+                <a href="https://www.Instagram.com/" target="_black"><img src="{% static 'Imagenes/IconoInstragram.png' %}"
+                        width="30" height="30"></a>
+                <a href="https://www.Twitter.com/" target="_black"><img src="{% static 'Imagenes/IconoTwiter.png' %}"
+                        width="30" height="30"></a>
+            </nav>
+
+        </div>
+
+    </aside>
+
+    {% block content %}{% endblock %}
+
+    <footer class="contenedor5">
+        <p class="Fin">Desarrollo Web y Mobile</p>
+    </footer>
+
+</html>
