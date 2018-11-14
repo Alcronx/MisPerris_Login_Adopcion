@@ -31,15 +31,16 @@
             <a href="#">Servicios</a>
             <a href="{% url 'pagina_formulario' %}">Contactanos</a>
             <a href="{% url 'nuevo_rescatado' %}">Nuevo Rescatado</a>
-            <div>
-                {% block Login %}
-                <a href="{% url 'social:begin' 'github' %}">Login GitHub</a>
-                {% endblock %}
-                {% block Nombre %}
-                <p>Hello {{ user.username }}!</p>
-                {% endblock %}
-            </div>
+
         </nav>
+        <div class="login">
+
+                {% if user.is_authenticated %}
+                <a href="/salir/">{{ user.username }} Discconect</a>
+                {% else %}
+                <a href="{% url 'social:begin' 'github' %}">Login GitHub</a>
+                {% endif %}
+        </div>
     </header>
     <aside class="Contenedor2">
         <div class="flexslider">
@@ -70,7 +71,6 @@
         <div class="Perro">
             <p class="Rescate">Rescate y Adopcion De Perros Callejeros</p>
         </div>
-
         <div class="Contenedor2abajo">
             <div class="numero">
                 <p>+56 9 98765431</p>

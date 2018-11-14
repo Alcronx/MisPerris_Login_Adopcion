@@ -29,6 +29,7 @@
 	position: relative;
     overflow: hidden;
     text-align: center;
+    padding: 5px;
 }
 
 
@@ -44,10 +45,12 @@
 }
 
 .portafolio-item:hover .portafolio-text{
-
 	transform: translateY(0%);
 	transform: translateY(0%);
-	transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	transform: scale(1.15);
 }
 
 .portafolio-item:hover .portafolio-img{
@@ -63,4 +66,11 @@ h1{
 .portafolio-img{
     width: 100%;
     height: 100%;
+}
+
+.NoExisten{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 300px;
 }

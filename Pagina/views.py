@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect, render_to_response
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash, login, authenticate
+from django.contrib.auth import logout
 from django.contrib import messages
 from django.utils import timezone
 from .models import Formulario
@@ -45,10 +46,9 @@ def nuevo_rescatado(request):
 	return render(request,'TheRialPerris/nuevorescatado.html') 
 
 
-
-
-
-
+def logOut(request):
+	logout(request)
+	return redirect('/')
 
 
 # Create your views here.

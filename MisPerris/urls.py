@@ -27,4 +27,5 @@ urlpatterns = [
 	url(r'^$', viewsPag.pagina_principal,  name='pagina_principal'),
 	url(r'^', include('Pagina.urls')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
+    url(r'^salir/$', viewsPag.logOut, name='logOut'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

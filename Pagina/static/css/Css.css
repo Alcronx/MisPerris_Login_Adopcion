@@ -25,18 +25,17 @@
 }
 
 header nav{
-    width: 50%;
+    width: 60%;
     /*flex*/
     display:flex;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: flex-end;
     
 }
 
 header nav a{
     
-    color: #fff;
-    text-align: center;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px;
     
@@ -61,6 +60,23 @@ header nav a{
     
 }
 
+.login{
+    border: 2px solid rgb(53, 53, 53);
+	border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(233, 139, 139, 0.7);
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
+    background-color: rgb(146, 199, 154);
+}
+.login a{
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-family: cursive;
+}
+
 .Perro{
     padding: 10px;
      /*flex*/
@@ -75,7 +91,7 @@ header nav a{
     text-align: center;
     font: oblique bold 120% cursive;
     text-decoration: none;
-    color: #fff;
+    color: rgb(0, 0, 0);
     
 }
 .Contenedor2abajo{
@@ -91,7 +107,7 @@ header nav a{
 
 .numero{
     font-family: fantasy;
-    color: #fff;
+    color: rgb(0, 0, 0);
     padding-left: 10px;
 }
 
@@ -147,6 +163,27 @@ p{
     font-family: cursive;
 }
 /*Media---------------------------*/
+@media screen and (max-width: 1100px){
+    header nav{
+        width: 100%;
+        /*flex*/
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        
+    }
+
+    .logo{
+        justify-content: center;
+    }
+
+    .Contenedor1{
+        flex-direction: column;
+    }
+
+}
 @media screen and (max-width: 550px) {
 	header nav{
         width: 100%;
