@@ -9,7 +9,9 @@
 {% block content %}
 <div class="contenedor-formulario">
         <div class="wrap">
-        <form action="" class="formulario post-form" name="formulario_registro" method="POST" onsubmit="return validar()">{%csrf_token %}
+                {% if user.is_authenticated %}
+                <form action="" class="formulario post-form" name="formulario_registro" method="POST" onsubmit="return validar()">{%csrf_token%}
+                        {% if rescatados %}
                         <div>
                                 <div class="input-group">
                                         <input type="email" id="email" name="em">
@@ -24,7 +26,7 @@
                                         <label for="nombre">Nombre:</label>
                                 </div>
                                 <div class="input-group">
-                                        <input type="date" max="2000-12-30"   id="fecha" name="fec" >
+                                        <input type="date" max="2000-12-30" id="fecha" name="fec">
                                         <label for="fecha">Fecha Nacimiento:</label>
                                 </div>
                                 <div class="input-group">
@@ -59,13 +61,38 @@
 
                                         <label for="TipoCasa">Tipo de Casa:</label>
                                 </div>
-                                
+
+                                <div class="input-group ">
+                                        <div class="mainselection">
+
+                                                <select id="Nombreresc" name="Nombreresc">
+                                                        {% for rescatado in rescatados %}
+                                                        <option value="{{ rescatado.Nombreresc }}">{{ rescatado.Nombreresc }}</option>
+                                                        {% endfor %}
+                                                </select>
+                                        </div>
+                                        <label for="Nombreresc">Nombre Perro:</label>
+
+                                </div>
+
 
                                 <input type="submit" class="btn-submit" value="Enviar">
 
                         </div>
 
                 </form>
+                {% else %}
+                <div class="No_Registrado">
+                        <h1>No Existen Perros Para Rescatar</h1>
+                        <img src="{% static 'Imagenes/dificultades.png' %}" alt="" width="341.5px" height="192px">
+                </div>
+                {% endif %}
+                {% else %}
+                <div class="No_Registrado">
+                        <h1>Necesita Estar Registrado Para Rellenar El Formulario De Rescate</h1>
+                        <img src="{% static 'Imagenes/dificultades.png' %}" alt="" width="341.5px" height="192px">
+                </div>
+                {% endif %}
         </div>
 
 

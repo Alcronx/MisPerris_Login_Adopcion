@@ -9,13 +9,15 @@ from .models import rescatados
 
 
 def pagina_principal(request):
-	rescatado = rescatados.objects.all()
+	rescatado = rescatados.objects.filter(Estado="Disponible")
 	contexto = {'rescatados':rescatado}
 	return render(request,'TheRialPerris/PaginaPrincipal.html',contexto)
-    
-    
+
+
 def pagina_formulario(request):
 	form = Formulario()
+	rescatado = rescatados.objects.filter(Estado="Disponible")
+	contexto = {'rescatados':rescatado}
 	if request.method == "POST":
 	    
 		form.CorreoElectronico = request.POST['em']
@@ -29,11 +31,12 @@ def pagina_formulario(request):
 		form.save()
 		
     
-	return render(request,'TheRialPerris/Formulario.html')
+	return render(request,'TheRialPerris/Formulario.html',contexto)
 
 
 def nuevo_rescatado(request):
 	form = rescatados()
+	
 	if request.method == "POST":
 	    
 		form.Nombreresc = request.POST['nombreresc']
@@ -45,7 +48,7 @@ def nuevo_rescatado(request):
 
 	return render(request,'TheRialPerris/nuevorescatado.html') 
 
-
+@login_required
 def logOut(request):
 	logout(request)
 	return redirect('/')
