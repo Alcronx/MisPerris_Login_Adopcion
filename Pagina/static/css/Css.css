@@ -130,6 +130,13 @@ header nav a{
     background-color: #ffffff;
     font-family: cursive;
 }
+.Disponibles{
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-shadow: rgba(192, 196, 177, 0.856)
+}
 
 .contenedor3-1{
     width: 45%;

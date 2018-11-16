@@ -33,13 +33,16 @@
                 <p>actividades que realizamos para obtener financiamiento para seguir ayudando.</p>
         </div>
 </footer>
-
+<div class="hover">
+        <h1 class="Disponibles">Perros Disponibles</h1>
+</div>
 <div class="hover">
         {% if rescatados %}
+
         {% for rescatado in rescatados %}
         <div class="contenedorImg">
                 <section class="portafolio-item">
-                        <img src="{{rescatado.image.url}}" alt="" class="portafolio-img" >
+                        <img src="{{rescatado.image.url}}" alt="" class="portafolio-img">
                         <section class="portafolio-text">
                                 <h1>{{ rescatado.Nombreresc }}</h1>
                                 <p>{{ rescatado.Descripcion }}</p>
@@ -51,10 +54,10 @@
 
         {% else %}
         <div class="NoExisten">
-           <h1>NO EXISTEN PERROS</h1>
+                <h1>NO EXISTEN PERROS</h1>
         </div>
         {% endif %}
-        
+
 </div>
 
 

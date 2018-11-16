@@ -67,7 +67,7 @@
 
                                                 <select id="Nombreresc" name="Nombreresc">
                                                         {% for rescatado in rescatados %}
-                                                        <option value="{{ rescatado.Nombreresc }}">{{ rescatado.Nombreresc }}</option>
+                                                        <option value="{{ rescatado.pk }}">{{ rescatado.Nombreresc }}</option>
                                                         {% endfor %}
                                                 </select>
                                         </div>
@@ -89,7 +89,7 @@
                 {% endif %}
                 {% else %}
                 <div class="No_Registrado">
-                        <h1>Necesita Estar Registrado Para Rellenar El Formulario De Rescate</h1>
+                        <h1>Necesita Estar Logueado Para Rellenar El Formulario De Adopcion</h1>
                         <img src="{% static 'Imagenes/dificultades.png' %}" alt="" width="341.5px" height="192px">
                 </div>
                 {% endif %}
